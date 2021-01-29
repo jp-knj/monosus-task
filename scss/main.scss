@@ -92,4 +92,29 @@ body {
 }
 
 .featured {
+  margin-top: 4rem;
+  &_container {
+  }
+  &_content {
+    margin: 15px auto;
+    width: 90%;
+    padding: 10px;
+    background-size: cover;
+  }
+  &_info {
+    margin-left: auto;
+    height: 10rem;
+    width: 60%;
+    background-color: $color-white;
+    opacity: 0.8;
+    @include flexCentering();
+    flex-direction: column;
+  }
+  &_title {
+    font-size: 20px;
+  }
+  &_subtitle {
+    margin-top: 0.5rem;
+    font-size: 16px;
+  }
 }
