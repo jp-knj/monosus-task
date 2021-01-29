@@ -8,6 +8,7 @@
 }
 
 html {
+  margin: 0 auto;
   font-size: 62.5%;
 }
 
@@ -17,7 +18,6 @@ body {
 }
 
 .header {
-  //   position: fixed;
   width: 100%;
   z-index: 5;
   &_inner {
@@ -223,5 +223,38 @@ body {
       text-decoration: none;
       font-size: 1.6rem;
     }
+  }
+
+  .featured {
+    margin-top: 16rem;
+    &_container {
+      display: flex;
+
+      .featured-content {
+        width: calc((100% - 1px) / 3);
+      }
+    }
+    &_content {
+      height: 20rem;
+      margin: 3px;
+      width: calc((100% - 1px) / 3);
+      @include flexCentering();
+    }
+    &_info {
+      margin-right: auto;
+      margin-left: auto;
+      width: 40rem;
+    }
+    &_title {
+    }
+    &_subtitle {
+    }
+  }
+
+  .w100 {
+    width: 100%;
+  }
+  .mr4 {
+    margin-right: 4rem;
   }
 }
