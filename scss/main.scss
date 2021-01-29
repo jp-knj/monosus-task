@@ -118,3 +118,24 @@ body {
     font-size: 16px;
   }
 }
+
+.contact {
+  @include flexCentering();
+  flex-direction: column;
+  margin: 40px 0;
+
+  &_description {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-primary;
+    line-height: 40px;
+  }
+
+  &-btn {
+    margin-top: 20px;
+    padding: 10px 40px;
+    font-size: 2rem;
+    color: $color-primary;
+    background-color: $color-white;
+  }
+}
