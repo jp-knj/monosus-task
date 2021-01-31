@@ -10,6 +10,7 @@
 html {
   margin: 0 auto;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -75,6 +76,8 @@ body {
 .hero {
   height: 40vh;
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &_inner {
     position: absolute;
@@ -164,7 +167,7 @@ body {
 
     &_inner {
       height: 100%;
-      background-color: $color-gray;
+      background-color: $color-light;
       width: 20%;
     }
 
@@ -201,15 +204,40 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
     &_list {
+      background-color: $color-gray;
       height: 100%;
       padding: 1rem;
       @include flexCentering();
       width: calc((100% - 1px) / 5);
-    }
 
+      &-sub {
+        position: relative;
+        width: fit-content;
+        margin-right: 1rem;
+        padding: 1.2rem;
+        font-size: 12px;
+        a {
+          font-size: 12px;
+          text-decoration: underline;
+        }
+        &:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 0 3px 4px;
+          border-color: transparent transparent transparent #333;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -2px;
+        }
+      }
+    }
     .cta {
       background-color: $color-secondary;
       a {
@@ -229,14 +257,13 @@ body {
     margin-top: 16rem;
     &_container {
       display: flex;
-
       .featured-content {
         width: calc((100% - 1px) / 3);
       }
     }
     &_content {
       height: 20rem;
-      margin: 3px;
+      margin: 0.05rem;
       width: calc((100% - 1px) / 3);
       @include flexCentering();
     }
@@ -256,5 +283,18 @@ body {
   }
   .mr4 {
     margin-right: 4rem;
+  }
+
+  .contact {
+    margin: 13rem 0;
+
+    &_description {
+      br {
+        display: none;
+      }
+    }
+    &-btn {
+      font-weight: 700;
+    }
   }
 }
