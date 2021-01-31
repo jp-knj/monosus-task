@@ -1,0 +1,48 @@
+.featured {
+  margin-top: 4rem;
+  &_content {
+    margin: 15px auto;
+    width: 90%;
+    padding: 10px;
+    background-size: cover;
+  }
+  &_info {
+    margin-left: auto;
+    height: 10rem;
+    width: 60%;
+    background-color: $color-white;
+    opacity: 0.8;
+    @include flexCentering();
+    flex-direction: column;
+  }
+  &_title {
+    font-size: 20px;
+  }
+  &_subtitle {
+    margin-top: 0.5rem;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .featured {
+    margin-top: 16rem;
+    &_container {
+      display: flex;
+      .featured-content {
+        width: calc((100% - 1px) / 3);
+      }
+    }
+    &_content {
+      height: 20rem;
+      margin: 0.05rem;
+      width: calc((100% - 1px) / 3);
+      @include flexCentering();
+    }
+    &_info {
+      margin-right: auto;
+      margin-left: auto;
+      width: 40rem;
+    }
+  }
+}

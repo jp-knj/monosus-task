@@ -1,0 +1,135 @@
+.header {
+  width: 100%;
+  z-index: 5;
+  &_inner {
+    height: 8rem;
+    @include flexCentering();
+    position: relative;
+  }
+  &_logo {
+    color: $color-primary;
+    font-family: $font-family-secondary;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  .hamburger_menu {
+    background-color: $color-secondary;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 8rem;
+    width: 8rem;
+
+    .hamberger {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      .icon span {
+        display: block;
+        position: absolute;
+        width: 47px;
+        right: 15px;
+        border-bottom: $color-white solid 2px;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        transition: 0.3s;
+      }
+      .icon span:nth-child(1) {
+        top: 25px;
+      }
+      .icon span:nth-child(2) {
+        top: 39px;
+      }
+      .icon span:nth-child(3) {
+        bottom: 25px;
+      }
+    }
+  }
+}
+
+.navigation {
+  display: none;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .header {
+    display: flex;
+    height: 60vh;
+
+    &_inner {
+      height: 100%;
+      background-color: $color-light;
+      width: 20%;
+    }
+
+    &_logo {
+      font-size: 1.2rem;
+    }
+    .hamburger_menu {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    &_list {
+      background-color: $color-gray;
+      @include flexCentering();
+      width: calc((100% - 1px) / 5);
+
+      &-sub {
+        position: relative;
+        width: fit-content;
+        margin-right: 1rem;
+        padding: 1.2rem;
+        font-size: 12px;
+        a {
+          font-size: 12px;
+          text-decoration: underline;
+        }
+        &:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 0 3px 4px;
+          border-color: transparent transparent transparent #333;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -2px;
+        }
+      }
+    }
+    .cta {
+      background-color: $color-secondary;
+      a {
+        color: $color-white;
+      }
+    }
+
+    &_link {
+      width: 100%;
+      margin: 1rem;
+      display: flex;
+      justify-content: center;
+      color: $color-secondary;
+      text-decoration: none;
+      font-size: 1.6rem;
+    }
+
+    .br {
+      border-right: dotted 1px $color-primary;
+    }
+  }
+}

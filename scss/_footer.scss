@@ -1,0 +1,13 @@
+.footer {
+  background-color: $color-secondary;
+  padding: 5rem 0;
+
+  .copyright {
+    margin: 0 auto;
+    width: fit-content;
+    text-transform: uppercase;
+    font-family: $font-family-secondary;
+    color: $color-white;
+    font-size: 1.2rem;
+  }
+}
